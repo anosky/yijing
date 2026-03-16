@@ -1,0 +1,1254 @@
+<!DOCTYPE html>
+<!-- saved from url=(0044)https://young-meals-share.loca.lt/index.html -->
+<html lang="zh-CN"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>菩提易经 - 在菩提树下觉醒姻缘</title>
+    <link href="./菩提易经 - 在菩提树下觉醒_files/css2" rel="stylesheet">
+    <style>
+        :root {
+            --bark: #3D2914;
+            --bark-light: #5C4020;
+            --leaf-dark: #1B4332;
+            --leaf: #2D5A3D;
+            --leaf-light: #4A7C59;
+            --sand: #D4C5B0;
+            --sand-light: #E8DCC8;
+            --cream: #F5F0E8;
+            --cream-dark: #EDE6D6;
+            --gold: #C9A227;
+            --gold-light: #E0C060;
+            --shadow: rgba(61, 41, 20, 0.15);
+            --shadow-deep: rgba(61, 41, 20, 0.3);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Noto Sans SC', sans-serif;
+            background: var(--cream);
+            color: var(--bark);
+            min-height: 100vh;
+            line-height: 1.8;
+        }
+
+        /* 菩提叶装饰背景 */
+        .bodhi-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            pointer-events: none;
+            z-index: 0;
+            overflow: hidden;
+        }
+
+        .bodhi-leaf {
+            position: absolute;
+            width: 60px;
+            height: 60px;
+            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath d='M50 5 Q30 30 25 50 Q20 70 35 85 Q50 95 50 95 Q50 95 65 85 Q80 70 75 50 Q70 30 50 5' fill='%232D5A3D' opacity='0.08'/%3E%3Cpath d='M50 5 L50 95' stroke='%232D5A3D' stroke-width='1' opacity='0.1'/%3E%3C/svg%3E") no-repeat center;
+            background-size: contain;
+        }
+
+        .bodhi-leaf:nth-child(1) { top: 10%; left: 5%; transform: rotate(25deg); }
+        .bodhi-leaf:nth-child(2) { top: 25%; right: 8%; transform: rotate(-15deg); }
+        .bodhi-leaf:nth-child(3) { top: 60%; left: 3%; transform: rotate(45deg); }
+        .bodhi-leaf:nth-child(4) { bottom: 20%; right: 5%; transform: rotate(-30deg); }
+        .bodhi-leaf:nth-child(5) { top: 40%; left: 10%; transform: rotate(60deg); opacity: 0.5; }
+
+        /* 头部 - 菩提树下 */
+        header {
+            background: linear-gradient(180deg, var(--leaf-dark) 0%, var(--leaf) 50%, var(--bark) 100%);
+            color: var(--cream);
+            padding: 4rem 1rem 3rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* 菩提树冠 */
+        .canopy {
+            position: absolute;
+            top: -50px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 600px;
+            height: 200px;
+            background: radial-gradient(ellipse at center, var(--leaf-light) 0%, var(--leaf) 40%, transparent 70%);
+            opacity: 0.6;
+            border-radius: 50%;
+        }
+
+        .canopy::before,
+        .canopy::after {
+            content: '';
+            position: absolute;
+            background: radial-gradient(ellipse at center, var(--leaf) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .canopy::before {
+            width: 400px;
+            height: 150px;
+            top: 30px;
+            left: -100px;
+        }
+
+        .canopy::after {
+            width: 400px;
+            height: 150px;
+            top: 30px;
+            right: -100px;
+        }
+
+        /* 树干 */
+        .trunk {
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 150px;
+            background: linear-gradient(90deg, var(--bark) 0%, var(--bark-light) 50%, var(--bark) 100%);
+            border-radius: 10px 10px 0 0;
+        }
+
+        .trunk::before,
+        .trunk::after {
+            content: '';
+            position: absolute;
+            background: var(--bark);
+            border-radius: 5px;
+        }
+
+        .trunk::before {
+            width: 30px;
+            height: 100px;
+            left: -25px;
+            bottom: 0;
+            transform: rotate(-15deg);
+        }
+
+        .trunk::after {
+            width: 25px;
+            height: 80px;
+            right: -20px;
+            bottom: 20px;
+            transform: rotate(10deg);
+        }
+
+        header h1 {
+            font-family: 'Noto Serif SC', serif;
+            font-size: 2.8rem;
+            font-weight: 300;
+            margin-bottom: 0.5rem;
+            position: relative;
+            z-index: 1;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.3);
+            letter-spacing: 0.2em;
+        }
+
+        header .subtitle {
+            font-size: 1rem;
+            opacity: 0.9;
+            font-weight: 300;
+            position: relative;
+            z-index: 1;
+            letter-spacing: 0.1em;
+        }
+
+        header .enlightenment {
+            margin-top: 1rem;
+            font-family: 'Noto Serif SC', serif;
+            font-size: 0.9rem;
+            opacity: 0.8;
+            font-style: italic;
+        }
+
+        /* 导航 */
+        nav {
+            background: rgba(61, 41, 20, 0.95);
+            padding: 1rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--gold);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            color: var(--sand-light);
+            text-decoration: none;
+            padding: 0.6rem 1.2rem;
+            border-radius: 25px;
+            transition: all 0.4s;
+            font-size: 0.9rem;
+            border: 1px solid transparent;
+        }
+
+        nav a:hover, nav a.active {
+            background: rgba(201, 162, 39, 0.2);
+            border-color: var(--gold);
+            color: var(--gold-light);
+        }
+
+        /* 主容器 */
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 3rem 1.5rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* 禅意引言区 */
+        .zen-intro {
+            text-align: center;
+            padding: 4rem 2rem;
+            background: linear-gradient(135deg, var(--sand-light) 0%, var(--cream) 100%);
+            border-radius: 20px;
+            margin-bottom: 3rem;
+            border: 1px solid var(--sand);
+            position: relative;
+        }
+
+        .zen-intro::before {
+            content: '❝';
+            position: absolute;
+            top: 20px;
+            left: 30px;
+            font-size: 4rem;
+            color: var(--gold);
+            opacity: 0.3;
+            font-family: serif;
+        }
+
+        .zen-intro h2 {
+            font-family: 'Noto Serif SC', serif;
+            font-size: 1.8rem;
+            color: var(--leaf-dark);
+            margin-bottom: 1.5rem;
+            font-weight: 400;
+        }
+
+        .zen-intro p {
+            font-size: 1.05rem;
+            color: var(--bark-light);
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 2;
+        }
+
+        .zen-intro .sutra {
+            margin-top: 2rem;
+            padding: 1rem 2rem;
+            background: rgba(201, 162, 39, 0.1);
+            border-left: 3px solid var(--gold);
+            display: inline-block;
+            font-family: 'Noto Serif SC', serif;
+            color: var(--bark);
+            font-style: italic;
+        }
+
+        /* 功能卡片 - 禅意风格 */
+        .feature-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        .feature-card {
+            background: var(--cream);
+            border-radius: 15px;
+            padding: 2.5rem 2rem;
+            text-align: center;
+            transition: all 0.4s;
+            cursor: pointer;
+            border: 1px solid var(--sand);
+            box-shadow: 0 4px 15px var(--shadow);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--gold), var(--leaf));
+            transform: scaleX(0);
+            transition: transform 0.4s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 30px var(--shadow-deep);
+        }
+
+        .feature-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .feature-card .icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--leaf);
+        }
+
+        .feature-card h3 {
+            font-family: 'Noto Serif SC', serif;
+            color: var(--bark);
+            margin-bottom: 0.8rem;
+            font-size: 1.2rem;
+            font-weight: 500;
+        }
+
+        .feature-card p {
+            color: var(--bark-light);
+            font-size: 0.9rem;
+            line-height: 1.7;
+        }
+
+        /* 菩提树下摇卦区 */
+        .divination-sanctuary {
+            background: linear-gradient(180deg, var(--leaf-dark) 0%, var(--bark) 100%);
+            border-radius: 25px;
+            padding: 4rem 2rem;
+            text-align: center;
+            color: var(--cream);
+            margin-bottom: 4rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* 地面 */
+        .ground {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 100px;
+            background: linear-gradient(180deg, transparent 0%, var(--sand) 100%);
+            opacity: 0.3;
+        }
+
+        /* 落叶 */
+        .falling-leaves {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            pointer-events: none;
+            overflow: hidden;
+        }
+
+        .leaf {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: var(--leaf-light);
+            opacity: 0.4;
+            border-radius: 0 50% 0 50%;
+            animation: fall 8s infinite linear;
+        }
+
+        .leaf:nth-child(1) { left: 10%; animation-delay: 0s; }
+        .leaf:nth-child(2) { left: 30%; animation-delay: 2s; }
+        .leaf:nth-child(3) { left: 50%; animation-delay: 4s; }
+        .leaf:nth-child(4) { left: 70%; animation-delay: 1s; }
+        .leaf:nth-child(5) { left: 90%; animation-delay: 3s; }
+
+        @keyframes fall {
+            0% { transform: translateY(-20px) rotate(0deg); opacity: 0; }
+            10% { opacity: 0.4; }
+            90% { opacity: 0.4; }
+            100% { transform: translateY(400px) rotate(360deg); opacity: 0; }
+        }
+
+        .divination-sanctuary h2 {
+            font-family: 'Noto Serif SC', serif;
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            position: relative;
+            z-index: 1;
+            font-weight: 300;
+            letter-spacing: 0.1em;
+        }
+
+        .divination-sanctuary .meditation-text {
+            opacity: 0.85;
+            margin-bottom: 2rem;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+            position: relative;
+            z-index: 1;
+            font-size: 0.95rem;
+            line-height: 1.9;
+        }
+
+        .btn-enlighten {
+            background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 100%);
+            color: var(--bark);
+            border: none;
+            padding: 1.2rem 3.5rem;
+            font-size: 1.1rem;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.4s;
+            font-weight: 500;
+            position: relative;
+            z-index: 1;
+            box-shadow: 0 4px 20px rgba(201, 162, 39, 0.4);
+            font-family: 'Noto Serif SC', serif;
+        }
+
+        .btn-enlighten:hover {
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 8px 30px rgba(201, 162, 39, 0.5);
+        }
+
+        /* 卦象显示区 */
+        .hexagram-display {
+            display: none;
+            background: var(--cream);
+            border-radius: 20px;
+            padding: 2.5rem;
+            margin-top: 2.5rem;
+            color: var(--bark);
+            position: relative;
+            z-index: 1;
+        }
+
+        .hexagram-display.active {
+            display: block;
+            animation: fadeIn 0.8s;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .hexagram-visual {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            margin: 2rem 0;
+            padding: 2rem;
+            background: var(--sand-light);
+            border-radius: 15px;
+        }
+
+        .yao-line {
+            width: 140px;
+            height: 14px;
+            border-radius: 7px;
+            transition: all 0.5s;
+        }
+
+        .yao-yang {
+            background: var(--bark);
+        }
+
+        .yao-yin {
+            background: transparent;
+            border: 3px solid var(--bark);
+            position: relative;
+        }
+
+        .yao-yin::before,
+        .yao-yin::after {
+            content: '';
+            position: absolute;
+            width: 45%;
+            height: 100%;
+            background: var(--bark);
+            border-radius: 4px;
+            top: -3px;
+        }
+
+        .yao-yin::before { left: -3px; }
+        .yao-yin::after { right: -3px; }
+
+        /* 觉醒解读卡片 */
+        .awakening-card {
+            background: linear-gradient(135deg, var(--sand-light) 0%, var(--cream) 100%);
+            border-left: 4px solid var(--gold);
+            padding: 1.8rem;
+            border-radius: 0 15px 15px 0;
+            margin: 1.5rem 0;
+        }
+
+        .awakening-card h4 {
+            color: var(--leaf-dark);
+            font-family: 'Noto Serif SC', serif;
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .awakening-card p {
+            line-height: 1.9;
+            color: var(--bark);
+        }
+
+        /* 六十四卦 - 禅意网格 */
+        .hexagram-section {
+            background: var(--cream);
+            border-radius: 20px;
+            padding: 3rem 2rem;
+            margin-bottom: 3rem;
+            border: 1px solid var(--sand);
+        }
+
+        .section-title {
+            font-family: 'Noto Serif SC', serif;
+            font-size: 1.6rem;
+            color: var(--leaf-dark);
+            text-align: center;
+            margin-bottom: 2.5rem;
+            font-weight: 400;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 2px;
+            background: var(--gold);
+            margin: 1rem auto 0;
+        }
+
+        .hexagram-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
+            gap: 1rem;
+        }
+
+        .hexagram-item {
+            background: var(--cream-dark);
+            border: 1px solid var(--sand);
+            border-radius: 12px;
+            padding: 1rem 0.5rem;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .hexagram-item:hover {
+            background: var(--sand-light);
+            border-color: var(--gold);
+            transform: scale(1.05);
+            box-shadow: 0 4px 15px var(--shadow);
+        }
+
+        .hexagram-item .gua-symbol {
+            font-size: 1.8rem;
+            margin-bottom: 0.3rem;
+            color: var(--leaf);
+        }
+
+        .hexagram-item .gua-name {
+            font-size: 0.85rem;
+            color: var(--bark);
+            font-weight: 500;
+        }
+
+        /* 姻缘觉醒专题 */
+        .awakening-tabs {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 2rem;
+            border-bottom: 1px solid var(--sand);
+            flex-wrap: wrap;
+        }
+
+        .awakening-tab {
+            padding: 1rem 1.5rem;
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 0.95rem;
+            color: var(--bark-light);
+            transition: all 0.3s;
+            position: relative;
+            font-family: 'Noto Serif SC', serif;
+        }
+
+        .awakening-tab.active {
+            color: var(--leaf-dark);
+            font-weight: 500;
+        }
+
+        .awakening-tab.active::after {
+            content: '';
+            position: absolute;
+            bottom: -1px;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: var(--gold);
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+            animation: fadeIn 0.5s;
+        }
+
+        /* 禅意故事 */
+        .zen-story {
+            background: linear-gradient(135deg, var(--cream) 0%, var(--sand-light) 100%);
+            border-radius: 15px;
+            padding: 2rem;
+            margin: 1.5rem 0;
+            border: 1px solid var(--sand);
+            position: relative;
+        }
+
+        .zen-story::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(180deg, var(--gold), var(--leaf));
+            border-radius: 15px 0 0 15px;
+        }
+
+        .zen-story h4 {
+            color: var(--leaf-dark);
+            font-family: 'Noto Serif SC', serif;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+            padding-left: 1rem;
+        }
+
+        .zen-story p {
+            color: var(--bark);
+            line-height: 2;
+            padding-left: 1rem;
+        }
+
+        /* 页脚 */
+        footer {
+            background: var(--bark);
+            color: var(--sand);
+            text-align: center;
+            padding: 3rem 2rem;
+            position: relative;
+        }
+
+        footer .bodhi-icon {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            opacity: 0.6;
+        }
+
+        footer p {
+            opacity: 0.8;
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+
+        footer .wisdom {
+            font-family: 'Noto Serif SC', serif;
+            font-style: italic;
+            opacity: 0.6;
+            margin-top: 1rem;
+        }
+
+        /* 响应式 */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2rem;
+                letter-spacing: 0.1em;
+            }
+
+            .zen-intro {
+                padding: 2rem 1rem;
+            }
+
+            .divination-sanctuary {
+                padding: 3rem 1.5rem;
+            }
+
+            .hexagram-grid {
+                grid-template-columns: repeat(auto-fill, minmax(70px, 1fr));
+            }
+        }
+
+        /* 加载动画 */
+        .loading {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 2px solid rgba(245, 240, 232, 0.3);
+            border-radius: 50%;
+            border-top-color: var(--cream);
+            animation: spin 1s ease-in-out infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <!-- 菩提叶背景 -->
+    <div class="bodhi-bg">
+        <div class="bodhi-leaf"></div>
+        <div class="bodhi-leaf"></div>
+        <div class="bodhi-leaf"></div>
+        <div class="bodhi-leaf"></div>
+        <div class="bodhi-leaf"></div>
+    </div>
+
+    <header>
+        <div class="canopy"></div>
+        <div class="trunk"></div>
+        <h1>菩提易经</h1>
+        <p class="subtitle">在菩提树下觉醒姻缘</p>
+        <p class="enlightenment">"一切有为法，如梦幻泡影，如露亦如电，应作如是观"</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="https://young-meals-share.loca.lt/index.html#home" class="active">觉醒之门</a></li>
+            <li><a href="https://young-meals-share.loca.lt/index.html#divination">菩提问卦</a></li>
+            <li><a href="https://young-meals-share.loca.lt/index.html#hexagrams">六十四象</a></li>
+            <li><a href="https://young-meals-share.loca.lt/index.html#love">姻缘觉醒</a></li>
+            <li><a href="https://young-meals-share.loca.lt/index.html#stories">禅意故事</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <!-- 禅意引言 -->
+        <section id="home" class="zen-intro">
+            <h2>以易经智慧，照见爱情真谛</h2>
+            <p>《易经》六十四卦，如六十四片菩提叶，每一片都承载着古人对爱情、缘分的深刻洞见。在这棵千年菩提树下，让我们放下执念，以清净之心，照见属于自己的姻缘。</p>
+            <div class="sutra">因缘际会，皆是因果；得失随缘，心无增减</div>
+        </section>
+
+        <!-- 功能卡片 -->
+        <div class="feature-cards">
+            <div class="feature-card" onclick="scrollToSection(&#39;divination&#39;)">
+                <div class="icon">🧘</div>
+                <h3>菩提问卦</h3>
+                <p>闭目静心，默念所求，让卦象为你揭示感情的真相与方向</p>
+            </div>
+            <div class="feature-card" onclick="scrollToSection(&#39;hexagrams&#39;)">
+                <div class="icon">🍃</div>
+                <h3>六十四象</h3>
+                <p>如观菩提叶脉，每一卦都蕴含着阴阳变化的无上智慧</p>
+            </div>
+            <div class="feature-card" onclick="scrollToSection(&#39;stories&#39;)">
+                <div class="icon">📿</div>
+                <h3>禅意故事</h3>
+                <p>古代典故中的情缘，如镜照心，助你悟透爱情的本质</p>
+            </div>
+            <div class="feature-card" onclick="scrollToSection(&#39;love&#39;)">
+                <div class="icon">☸️</div>
+                <h3>姻缘觉醒</h3>
+                <p>针对不同境遇的指引，如菩提明灯，照亮情路迷途</p>
+            </div>
+        </div>
+
+        <!-- 菩提树下摇卦 -->
+        <section id="divination" class="divination-sanctuary">
+            <div class="falling-leaves">
+                <div class="leaf"></div>
+                <div class="leaf"></div>
+                <div class="leaf"></div>
+                <div class="leaf"></div>
+                <div class="leaf"></div>
+            </div>
+            <div class="ground"></div>
+            
+            <h2>🧘 菩提树下问姻缘</h2>
+            <p class="meditation-text">
+                找一安静处，闭目调息三次。<br>
+                心中默念你的感情困惑，不生执念，不妄求果。<br>
+                点击下方按钮，让易经为你开示。
+            </p>
+            <button class="btn-enlighten" onclick="castHexagram()">
+                <span id="castBtnText">静心问卦</span>
+            </button>
+            
+            <div id="hexagramResult" class="hexagram-display"></div>
+        </section>
+
+        <!-- 六十四卦 -->
+        <section id="hexagrams" class="hexagram-section">
+            <h2 class="section-title">六十四象</h2>
+            <div class="hexagram-grid" id="hexagramGrid"><div class="hexagram-item">
+                    <div class="gua-symbol">☰☰</div>
+                    <div class="gua-name">乾</div>
+                </div><div class="hexagram-item">
+                    <div class="gua-symbol">☷☷</div>
+                    <div class="gua-name">坤</div>
+                </div><div class="hexagram-item">
+                    <div class="gua-symbol">☵☳</div>
+                    <div class="gua-name">屯</div>
+                </div><div class="hexagram-item">
+                    <div class="gua-symbol">☶☵</div>
+                    <div class="gua-name">蒙</div>
+                </div><div class="hexagram-item">
+                    <div class="gua-symbol">☵☰</div>
+                    <div class="gua-name">需</div>
+                </div><div class="hexagram-item">
+                    <div class="gua-symbol">☰☵</div>
+                    <div class="gua-name">讼</div>
+                </div><div class="hexagram-item">
+                    <div class="gua-symbol">☷☵</div>
+                    <div class="gua-name">师</div>
+                </div><div class="hexagram-item">
+                    <div class="gua-symbol">☵☷</div>
+                    <div class="gua-name">比</div>
+                </div><div class="hexagram-item">
+                    <div class="gua-symbol">☴☰</div>
+                    <div class="gua-name">小畜</div>
+                </div><div class="hexagram-item">
+                    <div class="gua-symbol">☰☱</div>
+                    <div class="gua-name">履</div>
+                </div><div class="hexagram-item">
+                    <div class="gua-symbol">☷☰</div>
+                    <div class="gua-name">泰</div>
+                </div><div class="hexagram-item">
+                    <div class="gua-symbol">☰☷</div>
+                    <div class="gua-name">否</div>
+                </div><div class="hexagram-item">
+                    <div class="gua-symbol">☰☲</div>
+                    <div class="gua-name">同人</div>
+                </div><div class="hexagram-item">
+                    <div class="gua-symbol">☲☰</div>
+                    <div class="gua-name">大有</div>
+                </div><div class="hexagram-item">
+                    <div class="gua-symbol">☷☶</div>
+                    <div class="gua-name">谦</div>
+                </div><div class="hexagram-item">
+                    <div class="gua-symbol">☳☷</div>
+                    <div class="gua-name">豫</div>
+                </div><div class="hexagram-item">
+                    <div class="gua-symbol">☱☳</div>
+                    <div class="gua-name">随</div>
+                </div><div class="hexagram-item">
+                    <div class="gua-symbol">☶☴</div>
+                    <div class="gua-name">蛊</div>
+                </div><div class="hexagram-item">
+                    <div class="gua-symbol">☷☱</div>
+                    <div class="gua-name">临</div>
+                </div><div class="hexagram-item">
+                    <div class="gua-symbol">☴☷</div>
+                    <div class="gua-name">观</div>
+                </div><div class="hexagram-item">
+                    <div class="gua-symbol">☲☳</div>
+                    <div class="gua-name">噬嗑</div>
+                </div><div class="hexagram-item">
+                    <div class="gua-symbol">☶☲</div>
+                    <div class="gua-name">贲</div>
+                </div><div class="hexagram-item">
+                    <div class="gua-symbol">☶☷</div>
+                    <div class="gua-name">剥</div>
+                </div><div class="hexagram-item">
+                    <div class="gua-symbol">☷☳</div>
+                    <div class="gua-name">复</div>
+                </div><div class="hexagram-item">
+                    <div class="gua-symbol">☰☳</div>
+                    <div class="gua-name">无妄</div>
+                </div><div class="hexagram-item">
+                    <div class="gua-symbol">☶☰</div>
+                    <div class="gua-name">大畜</div>
+                </div><div class="hexagram-item">
+                    <div class="gua-symbol">☶☳</div>
+                    <div class="gua-name">颐</div>
+                </div><div class="hexagram-item">
+                    <div class="gua-symbol">☱☴</div>
+                    <div class="gua-name">大过</div>
+                </div><div class="hexagram-item">
+                    <div class="gua-symbol">☵☵</div>
+                    <div class="gua-name">坎</div>
+                </div><div class="hexagram-item">
+                    <div class="gua-symbol">☲☲</div>
+                    <div class="gua-name">离</div>
+                </div><div class="hexagram-item">
+                    <div class="gua-symbol">☱☶</div>
+                    <div class="gua-name">咸</div>
+                </div><div class="hexagram-item">
+                    <div class="gua-symbol">☳☴</div>
+                    <div class="gua-name">恒</div>
+                </div><div class="hexagram-item">
+                    <div class="gua-symbol">☰☶</div>
+                    <div class="gua-name">遁</div>
+                </div><div class="hexagram-item">
+                    <div class="gua-symbol">☳☰</div>
+                    <div class="gua-name">大壮</div>
+                </div><div class="hexagram-item">
+                    <div class="gua-symbol">☲☷</div>
+                    <div class="gua-name">晋</div>
+                </div><div class="hexagram-item">
+                    <div class="gua-symbol">☷☲</div>
+                    <div class="gua-name">明夷</div>
+                </div><div class="hexagram-item">
+                    <div class="gua-symbol">☴☲</div>
+                    <div class="gua-name">家人</div>
+                </div><div class="hexagram-item">
+                    <div class="gua-symbol">☲☱</div>
+                    <div class="gua-name">睽</div>
+                </div><div class="hexagram-item">
+                    <div class="gua-symbol">☵☶</div>
+                    <div class="gua-name">蹇</div>
+                </div><div class="hexagram-item">
+                    <div class="gua-symbol">☳☵</div>
+                    <div class="gua-name">解</div>
+                </div><div class="hexagram-item">
+                    <div class="gua-symbol">☶☱</div>
+                    <div class="gua-name">损</div>
+                </div><div class="hexagram-item">
+                    <div class="gua-symbol">☴☳</div>
+                    <div class="gua-name">益</div>
+                </div><div class="hexagram-item">
+                    <div class="gua-symbol">☱☰</div>
+                    <div class="gua-name">夬</div>
+                </div><div class="hexagram-item">
+                    <div class="gua-symbol">☰☴</div>
+                    <div class="gua-name">姤</div>
+                </div><div class="hexagram-item">
+                    <div class="gua-symbol">☱☷</div>
+                    <div class="gua-name">萃</div>
+                </div><div class="hexagram-item">
+                    <div class="gua-symbol">☷☴</div>
+                    <div class="gua-name">升</div>
+                </div><div class="hexagram-item">
+                    <div class="gua-symbol">☱☵</div>
+                    <div class="gua-name">困</div>
+                </div><div class="hexagram-item">
+                    <div class="gua-symbol">☵☴</div>
+                    <div class="gua-name">井</div>
+                </div><div class="hexagram-item">
+                    <div class="gua-symbol">☱☲</div>
+                    <div class="gua-name">革</div>
+                </div><div class="hexagram-item">
+                    <div class="gua-symbol">☲☴</div>
+                    <div class="gua-name">鼎</div>
+                </div><div class="hexagram-item">
+                    <div class="gua-symbol">☳☳</div>
+                    <div class="gua-name">震</div>
+                </div><div class="hexagram-item">
+                    <div class="gua-symbol">☶☶</div>
+                    <div class="gua-name">艮</div>
+                </div><div class="hexagram-item">
+                    <div class="gua-symbol">☴☶</div>
+                    <div class="gua-name">渐</div>
+                </div><div class="hexagram-item">
+                    <div class="gua-symbol">☳☱</div>
+                    <div class="gua-name">归妹</div>
+                </div><div class="hexagram-item">
+                    <div class="gua-symbol">☳☲</div>
+                    <div class="gua-name">丰</div>
+                </div><div class="hexagram-item">
+                    <div class="gua-symbol">☲☶</div>
+                    <div class="gua-name">旅</div>
+                </div><div class="hexagram-item">
+                    <div class="gua-symbol">☴☴</div>
+                    <div class="gua-name">巽</div>
+                </div><div class="hexagram-item">
+                    <div class="gua-symbol">☱☱</div>
+                    <div class="gua-name">兑</div>
+                </div><div class="hexagram-item">
+                    <div class="gua-symbol">☴☵</div>
+                    <div class="gua-name">涣</div>
+                </div><div class="hexagram-item">
+                    <div class="gua-symbol">☵☱</div>
+                    <div class="gua-name">节</div>
+                </div><div class="hexagram-item">
+                    <div class="gua-symbol">☴☱</div>
+                    <div class="gua-name">中孚</div>
+                </div><div class="hexagram-item">
+                    <div class="gua-symbol">☳☶</div>
+                    <div class="gua-name">小过</div>
+                </div><div class="hexagram-item">
+                    <div class="gua-symbol">☵☲</div>
+                    <div class="gua-name">既济</div>
+                </div><div class="hexagram-item">
+                    <div class="gua-symbol">☲☵</div>
+                    <div class="gua-name">未济</div>
+                </div></div>
+        </section>
+
+        <!-- 姻缘觉醒 -->
+        <section id="love" class="hexagram-section">
+            <h2 class="section-title">☸️ 姻缘觉醒</h2>
+            <div class="awakening-tabs">
+                <button class="awakening-tab active" onclick="switchTab(&#39;single&#39;)">静待缘起</button>
+                <button class="awakening-tab" onclick="switchTab(&#39;dating&#39;)">情中修行</button>
+                <button class="awakening-tab" onclick="switchTab(&#39;marriage&#39;)">姻缘共修</button>
+                <button class="awakening-tab" onclick="switchTab(&#39;breakup&#39;)">放下执念</button>
+            </div>
+            
+            <div id="single" class="tab-content active">
+                <div class="awakening-card">
+                    <h4>🌿 乾卦 - 天行健，君子以自强不息</h4>
+                    <p><strong>觉醒指引：</strong>乾卦如天，刚健中正。单身者得此卦，当知良缘非等而来，需先修自身。如菩提树之生长，先扎根，后参天。提升自己，扩展心量，缘分自至。</p>
+                    <p style="margin-top: 1rem; color: var(--leaf);">"种下一颗善因，待它开花结果。不急不躁，是你的终会到来。"</p>
+                </div>
+                <div class="zen-story">
+                    <h4>📿 禅宗公案：姜子牙悟道</h4>
+                    <p>姜子牙七十二岁垂钓渭水，不求鱼而钓王侯。他不急不躁，修养德行，终遇明主。单身如垂钓，需有耐心，更要先让自己成为值得被钓的"大鱼"。</p>
+                </div>
+            </div>
+            
+            <div id="dating" class="tab-content">
+                <div class="awakening-card">
+                    <h4>🌸 咸卦 - 山上有泽，咸</h4>
+                    <p><strong>觉醒指引：</strong>咸者，感也，无心之感。恋爱中得此卦，当知真情非刻意追求，而是自然流露。如山泽通气，相互感应，不执着，不控制，方得长久。</p>
+                </div>
+            </div>
+            
+            <div id="marriage" class="tab-content">
+                <div class="awakening-card">
+                    <h4>💫 恒卦 - 雷风恒，君子以立不易方</h4>
+                    <p><strong>觉醒指引：</strong>恒卦象征恒久。婚姻如修行，需日复一日的坚持与包容。雷动风随，刚柔相济，方能白头偕老。</p>
+                </div>
+            </div>
+            
+            <div id="breakup" class="tab-content">
+                <div class="awakening-card">
+                    <h4>🍂 涣卦 - 风水涣，先王以享于帝立庙</h4>
+                    <p><strong>觉醒指引：</strong>涣卦象征离散，但也蕴含重新凝聚的可能。如风吹水波，虽散有聚。放下执念，方能看清真相。若缘尽，放手即是成全；若缘未尽，冷静后自有重逢之时。</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 禅意故事 -->
+        <section id="stories" class="hexagram-section">
+            <h2 class="section-title">📿 禅意故事</h2>
+            <div class="zen-story">
+                <h4>🌺 坤卦：孟母三迁与慈悲</h4>
+                <p>坤卦如地，厚德载物。孟母为子三迁，非为强求，而是顺应天性，提供适宜生长的土壤。感情中，真正的爱是成就对方，而非占有。</p>
+            </div>
+            <div class="zen-story">
+                <h4>⚡ 震卦：司马相如的顿悟</h4>
+                <p>司马相如一曲《凤求凰》，打破世俗束缚。震卦启示我们：真爱来临时，要有超越常规的勇气，如雷霆惊醒迷梦。</p>
+            </div>
+            <div class="zen-story">
+                <h4>🌊 坎卦：白蛇的修行</h4>
+                <p>白素贞千年修行只为报恩，历经九九八十一难。坎卦告诉我们：真爱必经考验，唯有初心不改，方能渡尽劫波。</p>
+            </div>
+            <div class="zen-story">
+                <h4>🔥 离卦：梁祝的涅槃</h4>
+                <p>梁山伯与祝英台生前不能相守，死后化蝶双飞。离卦启示：真正的爱情超越形体，精神的契合才是永恒。</p>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <div class="bodhi-icon">🌳</div>
+        <p>菩提易经 · 在觉悟中遇见真爱</p>
+        <p class="wisdom">"应无所住而生其心" ——《金刚经》</p>
+    </footer>
+
+    <script>
+        // 六十四卦数据
+        const hexagrams = [
+            { id: 1, name: "乾", cname: "乾为天", symbol: "☰☰", lines: [1,1,1,1,1,1], meaning: "刚健中正", love: "修己达人，良缘自来" },
+            { id: 2, name: "坤", cname: "坤为地", symbol: "☷☷", lines: [0,0,0,0,0,0], meaning: "厚德载物", love: "柔顺包容，以静制动" },
+            { id: 3, name: "屯", cname: "水雷屯", symbol: "☵☳", lines: [0,0,1,0,1,0], meaning: "起始维艰", love: "初恋萌动，需谨慎经营" },
+            { id: 4, name: "蒙", cname: "山水蒙", symbol: "☶☵", lines: [1,0,0,0,1,0], meaning: "启蒙奋发", love: "情窦初开，宜虚心学习" },
+            { id: 5, name: "需", cname: "水天需", symbol: "☵☰", lines: [0,0,1,1,1,1], meaning: "等待时机", love: "耐心等待，姻缘自来" },
+            { id: 6, name: "讼", cname: "天水讼", symbol: "☰☵", lines: [1,1,1,0,1,0], meaning: "慎争戒讼", love: "避免争执，以和为贵" },
+            { id: 7, name: "师", cname: "地水师", symbol: "☷☵", lines: [0,0,0,0,1,0], meaning: "行险而顺", love: "需要引导，师长助力" },
+            { id: 8, name: "比", cname: "水地比", symbol: "☵☷", lines: [0,0,1,0,0,0], meaning: "诚信团结", love: "相亲相爱，和谐融洽" },
+            { id: 9, name: "小畜", cname: "风天小畜", symbol: "☴☰", lines: [0,1,1,1,1,1], meaning: "蓄养待进", love: "小有积蓄，稳步发展" },
+            { id: 10, name: "履", cname: "天泽履", symbol: "☰☱", lines: [1,1,1,0,1,1], meaning: "脚踏实地", love: "谨慎交往，循序渐进" },
+            { id: 11, name: "泰", cname: "地天泰", symbol: "☷☰", lines: [0,0,0,1,1,1], meaning: "天地交泰", love: "阴阳和合，大吉大利" },
+            { id: 12, name: "否", cname: "天地否", symbol: "☰☷", lines: [1,1,1,0,0,0], meaning: "天地不交", love: "沟通不畅，需多交流" },
+            { id: 13, name: "同人", cname: "天火同人", symbol: "☰☲", lines: [1,1,1,1,0,1], meaning: "类族辨物", love: "志同道合，情投意合" },
+            { id: 14, name: "大有", cname: "火天大有", symbol: "☲☰", lines: [1,0,1,1,1,1], meaning: "顺天依时", love: "丰收在望，幸福美满" },
+            { id: 15, name: "谦", cname: "地山谦", symbol: "☷☶", lines: [0,0,0,1,0,0], meaning: "内高外低", love: "谦虚待人，良缘自来" },
+            { id: 16, name: "豫", cname: "雷地豫", symbol: "☳☷", lines: [0,0,1,0,0,0], meaning: "顺时依势", love: "和乐融融，感情甜蜜" },
+            { id: 17, name: "随", cname: "泽雷随", symbol: "☱☳", lines: [0,1,1,0,0,1], meaning: "随时变通", love: "随遇而安，顺其自然" },
+            { id: 18, name: "蛊", cname: "山风蛊", symbol: "☶☴", lines: [1,0,0,0,1,1], meaning: "振疲起衰", love: "需要整顿，去除积弊" },
+            { id: 19, name: "临", cname: "地泽临", symbol: "☷☱", lines: [0,0,0,0,1,1], meaning: "教民保民", love: "亲密无间，相互关怀" },
+            { id: 20, name: "观", cname: "风地观", symbol: "☴☷", lines: [0,1,1,0,0,0], meaning: "观下瞻上", love: "观察了解，慎重选择" },
+            { id: 21, name: "噬嗑", cname: "火雷噬嗑", symbol: "☲☳", lines: [1,0,1,0,0,1], meaning: "宽严相济", love: "有矛盾需化解" },
+            { id: 22, name: "贲", cname: "山火贲", symbol: "☶☲", lines: [1,0,0,1,0,1], meaning: "饰外扬质", love: "注重仪表，内外兼修" },
+            { id: 23, name: "剥", cname: "山地剥", symbol: "☶☷", lines: [1,0,0,0,0,0], meaning: "顺势而止", love: "感情转淡，需防变故" },
+            { id: 24, name: "复", cname: "地雷复", symbol: "☷☳", lines: [0,0,0,0,0,1], meaning: "寓动于顺", love: "感情复苏，破镜重圆" },
+            { id: 25, name: "无妄", cname: "天雷无妄", symbol: "☰☳", lines: [1,1,1,0,0,1], meaning: "无妄而得", love: "真诚相待，不存妄念" },
+            { id: 26, name: "大畜", cname: "山天大畜", symbol: "☶☰", lines: [1,0,0,1,1,1], meaning: "止而不止", love: "厚积薄发，静待时机" },
+            { id: 27, name: "颐", cname: "山雷颐", symbol: "☶☳", lines: [1,0,0,0,0,1], meaning: "纯正以养", love: "滋养感情，细水长流" },
+            { id: 28, name: "大过", cname: "泽风大过", symbol: "☱☴", lines: [0,1,1,1,1,0], meaning: "非常行动", love: "需要突破常规" },
+            { id: 29, name: "坎", cname: "坎为水", symbol: "☵☵", lines: [0,0,1,0,0,1], meaning: "行险用险", love: "感情有险，需谨慎" },
+            { id: 30, name: "离", cname: "离为火", symbol: "☲☲", lines: [1,0,1,1,0,1], meaning: "附和依托", love: "依附对方，心灵相通" },
+            { id: 31, name: "咸", cname: "泽山咸", symbol: "☱☶", lines: [0,1,1,1,0,0], meaning: "相互感应", love: "心心相印，一见钟情" },
+            { id: 32, name: "恒", cname: "雷风恒", symbol: "☳☴", lines: [0,0,1,1,1,0], meaning: "恒心有成", love: "白头偕老，长久美满" },
+            { id: 33, name: "遁", cname: "天山遁", symbol: "☰☶", lines: [1,1,1,1,0,0], meaning: "遁世救世", love: "暂时退避，明哲保身" },
+            { id: 34, name: "大壮", cname: "雷天大壮", symbol: "☳☰", lines: [0,0,1,1,1,1], meaning: "壮勿妄动", love: "感情高涨，需冷静" },
+            { id: 35, name: "晋", cname: "火地晋", symbol: "☲☷", lines: [1,0,1,0,0,0], meaning: "求进发展", love: "感情升温，关系进展" },
+            { id: 36, name: "明夷", cname: "地火明夷", symbol: "☷☲", lines: [0,0,0,1,0,1], meaning: "晦而转明", love: "暂时昏暗，终见光明" },
+            { id: 37, name: "家人", cname: "风火家人", symbol: "☴☲", lines: [0,1,1,1,0,1], meaning: "齐家治国", love: "家庭和睦，相亲相爱" },
+            { id: 38, name: "睽", cname: "火泽睽", symbol: "☲☱", lines: [1,0,1,0,1,1], meaning: "异中求同", love: "有分歧但可调和" },
+            { id: 39, name: "蹇", cname: "水山蹇", symbol: "☵☶", lines: [0,0,1,1,0,0], meaning: "险阻在前", love: "感情受阻，需耐心" },
+            { id: 40, name: "解", cname: "雷水解", symbol: "☳☵", lines: [0,0,1,0,1,0], meaning: "柔道致治", love: "困境解除，雨过天晴" },
+            { id: 41, name: "损", cname: "山泽损", symbol: "☶☱", lines: [1,0,0,0,1,1], meaning: "损益制衡", love: "有得有失，需取舍" },
+            { id: 42, name: "益", cname: "风雷益", symbol: "☴☳", lines: [0,1,1,0,0,1], meaning: "损上益下", love: "感情受益，互助互利" },
+            { id: 43, name: "夬", cname: "泽天夬", symbol: "☱☰", lines: [0,1,1,1,1,1], meaning: "决而能和", love: "需要决断，当断则断" },
+            { id: 44, name: "姤", cname: "天风姤", symbol: "☰☴", lines: [1,1,1,0,1,1], meaning: "风行天下", love: "偶遇桃花，露水情缘" },
+            { id: 45, name: "萃", cname: "泽地萃", symbol: "☱☷", lines: [0,1,1,0,0,0], meaning: "荟萃聚集", love: "缘分天定，欢聚一堂" },
+            { id: 46, name: "升", cname: "地风升", symbol: "☷☴", lines: [0,0,0,0,1,1], meaning: "柔顺谦恭", love: "感情上升，渐入佳境" },
+            { id: 47, name: "困", cname: "泽水困", symbol: "☱☵", lines: [0,1,1,0,1,0], meaning: "困境求通", love: "感情困顿，需突破" },
+            { id: 48, name: "井", cname: "水风井", symbol: "☵☴", lines: [0,0,1,0,1,1], meaning: "求贤若渴", love: "如井水养人，相互滋养" },
+            { id: 49, name: "革", cname: "泽火革", symbol: "☱☲", lines: [0,1,1,1,0,1], meaning: "顺天应人", love: "需要变革，破旧立新" },
+            { id: 50, name: "鼎", cname: "火风鼎", symbol: "☲☴", lines: [1,0,1,0,1,1], meaning: "稳重图变", love: "稳定中有新机遇" },
+            { id: 51, name: "震", cname: "震为雷", symbol: "☳☳", lines: [0,0,1,0,0,1], meaning: "临危不乱", love: "感情震动，保持镇定" },
+            { id: 52, name: "艮", cname: "艮为山", symbol: "☶☶", lines: [1,0,0,1,0,0], meaning: "动静适时", love: "适可而止，知进退" },
+            { id: 53, name: "渐", cname: "风山渐", symbol: "☴☶", lines: [0,1,1,1,0,0], meaning: "渐进蓄德", love: "循序渐进，步步为营" },
+            { id: 54, name: "归妹", cname: "雷泽归妹", symbol: "☳☱", lines: [0,0,1,0,1,1], meaning: "立家兴业", love: "谈婚论嫁，组建家庭" },
+            { id: 55, name: "丰", cname: "雷火丰", symbol: "☳☲", lines: [0,0,1,1,0,1], meaning: "日中则斜", love: "感情丰盛，盛极思衰" },
+            { id: 56, name: "旅", cname: "火山旅", symbol: "☲☶", lines: [1,0,1,1,0,0], meaning: "路途在外", love: "聚少离多，以信相守" },
+            { id: 57, name: "巽", cname: "巽为风", symbol: "☴☴", lines: [0,1,1,0,1,1], meaning: "谦逊受益", love: "以柔克刚，谦逊待人" },
+            { id: 58, name: "兑", cname: "兑为泽", symbol: "☱☱", lines: [0,1,1,0,1,1], meaning: "刚内柔外", love: "心情愉悦，感情和乐" },
+            { id: 59, name: "涣", cname: "风水涣", symbol: "☴☵", lines: [0,1,1,0,1,0], meaning: "拯救涣散", love: "感情离散，可挽回" },
+            { id: 60, name: "节", cname: "水泽节", symbol: "☵☱", lines: [0,0,1,0,1,1], meaning: "万物有节", love: "节制有度，不逾矩" },
+            { id: 61, name: "中孚", cname: "风泽中孚", symbol: "☴☱", lines: [0,1,1,0,1,1], meaning: "诚信立身", love: "真诚相待，心有灵犀" },
+            { id: 62, name: "小过", cname: "雷山小过", symbol: "☳☶", lines: [0,0,1,1,0,0], meaning: "行动有度", love: "小有过失，可补救" },
+            { id: 63, name: "既济", cname: "水火既济", symbol: "☵☲", lines: [0,0,1,1,0,1], meaning: "盛极将衰", love: "感情成就，需守成" },
+            { id: 64, name: "未济", cname: "火水未济", symbol: "☲☵", lines: [1,0,1,0,0,1], meaning: "事业未竟", love: "尚未成功，仍需努力" }
+        ];
+
+        // 初始化六十四卦网格
+        function initHexagramGrid() {
+            const grid = document.getElementById('hexagramGrid');
+            hexagrams.forEach(gua => {
+                const item = document.createElement('div');
+                item.className = 'hexagram-item';
+                item.innerHTML = `
+                    <div class="gua-symbol">${gua.symbol}</div>
+                    <div class="gua-name">${gua.name}</div>
+                `;
+                item.onclick = () => showHexagramDetail(gua.id);
+                grid.appendChild(item);
+            });
+        }
+
+        // 摇卦功能
+        function castHexagram() {
+            const btnText = document.getElementById('castBtnText');
+            const result = document.getElementById('hexagramResult');
+            
+            btnText.innerHTML = '<span class="loading"></span> 静心感应中...';
+            
+            setTimeout(() => {
+                const randomId = Math.floor(Math.random() * 64) + 1;
+                const gua = hexagrams.find(g => g.id === randomId);
+                displayHexagram(gua);
+                btnText.textContent = '再问一卦';
+            }, 3000);
+        }
+
+        // 显示卦象
+        function displayHexagram(gua) {
+            const result = document.getElementById('hexagramResult');
+            
+            let linesHtml = '';
+            for (let i = 5; i >= 0; i--) {
+                const isYang = gua.lines[i] === 1;
+                linesHtml += `<div class="yao-line ${isYang ? 'yao-yang' : 'yao-yin'}"></div>`;
+            }
+            
+            result.innerHTML = `
+                <h3 style="font-family: 'Noto Serif SC', serif; color: var(--leaf-dark); margin-bottom: 1rem; font-size: 1.5rem;">
+                    ${gua.symbol} ${gua.cname}卦
+                </h3>
+                <div class="hexagram-visual">
+                    ${linesHtml}
+                </div>
+                <div class="awakening-card">
+                    <h4>☸️ 觉醒指引</h4>
+                    <div style="line-height: 1.9;">
+                        <p><strong style="color: var(--leaf-dark);">卦意：</strong>${gua.meaning}</p>
+                        <p style="margin-top: 1rem;"><strong style="color: var(--leaf-dark);">姻缘开示：</strong>${gua.love}</p>
+                    </div>
+                </div>
+                <div class="zen-story">
+                    <h4>📿 禅悟</h4>
+                    <p>${getStory(gua.id)}</p>
+                </div>
+            `;
+            result.classList.add('active');
+        }
+
+        // 获取禅悟故事
+        function getStory(guaId) {
+            const stories = {
+                1: "乾卦如天，刚健不息。感情中，你当如菩提树向阳生长，先成就自己，再遇见那个对的人。不急不躁，是最好的等待。",
+                2: "坤卦如地，包容万物。真正的爱不是改变对方，而是像大地一样，给予生长的空间和养分。",
+                31: "咸卦，无心之感。最好的爱情，不是刻意追求，而是如两叶菩提，在风中自然相触。",
+                32: "恒卦启示：爱情如修行，不是一时的激情，而是日复一日的坚持与陪伴。",
+                37: "家人卦：家不是讲理的地方，是讲爱的地方。相互包容，方能和睦。"
+            };
+            return stories[guaId] || "此卦蕴含无上智慧，需以清净心体会。姻缘如水，顺其自然，方得自在。";
+        }
+
+        // 显示卦象详情
+        function showHexagramDetail(guaId) {
+            const gua = hexagrams.find(g => g.id === guaId);
+            displayHexagram(gua);
+            document.getElementById('divination').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // 切换标签页
+        function switchTab(tabId) {
+            document.querySelectorAll('.awakening-tab').forEach(tab => tab.classList.remove('active'));
+            document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
+            
+            event.target.classList.add('active');
+            document.getElementById(tabId).classList.add('active');
+        }
+
+        // 滚动到指定区域
+        function scrollToSection(id) {
+            document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // 导航高亮
+        document.querySelectorAll('nav a').forEach(link => {
+            link.addEventListener('click', function(e) {
+                document.querySelectorAll('nav a').forEach(l => l.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+
+        // 初始化
+        initHexagramGrid();
+    </script>
+
+</body></html>
